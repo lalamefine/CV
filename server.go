@@ -57,6 +57,7 @@ func loadDirToCache(path string) {
 
 func serveByFileHandler(w http.ResponseWriter, r *http.Request) {
 	name := strings.TrimPrefix(r.URL.Path, "/")
+	fmt.Println(strings.Join([]string{r.Method, name}, " /"))
 	if name == "" {
 		name = "index"
 	}
@@ -74,6 +75,7 @@ func serveByFileHandler(w http.ResponseWriter, r *http.Request) {
 
 func serveByMemCachedFileHandler(w http.ResponseWriter, r *http.Request) {
 	name := strings.TrimPrefix(r.URL.Path, "/")
+	fmt.Println(strings.Join([]string{r.Method, name}, " /"))
 	if name == "" {
 		name = "index"
 	}
