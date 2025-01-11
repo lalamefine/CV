@@ -63,7 +63,7 @@ func serveByFileHandler(w http.ResponseWriter, r *http.Request) {
 	if filepath.Ext(name) == "" {
 		name = name + ".html"
 	}
-	content, err := os.ReadFile(filepath.Join("./web", name))
+	content, err := os.ReadFile(filepath.Join("./docs", name))
 	if err != nil {
 		http.NotFound(w, r)
 		return
