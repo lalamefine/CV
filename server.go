@@ -48,7 +48,7 @@ func loadDirToCache(path string) {
 				log.Fatal(err)
 			}
 			path = strings.ReplaceAll(path, "\\", "/")
-			path = strings.TrimPrefix(path, "web/")
+			path = strings.TrimPrefix(path, "docs/")
 			fmt.Println("Loaded " + path)
 			cache[path] = content
 		}
