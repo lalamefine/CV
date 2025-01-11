@@ -11,13 +11,14 @@ import (
 
 func main() {
 	mode := os.Args[1]
+	port := os.Args[2]
 
 	switch mode {
 	case "file":
 		http.HandleFunc("/", serveByFileHandler)
 		fmt.Print("Direct file serving mode")
 	case "mem":
-		loadFilesToCache()
+		loadDirToCache("./web")
 		http.HandleFunc("/", serveByMemCachedFileHandler)
 		fmt.Print("Memory cached file serving mode")
 	default:
@@ -25,26 +26,31 @@ func main() {
 		return
 	}
 
-	fmt.Println(" on port 8080")
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	fmt.Println(" on port " + port)
+	log.Fatal(http.ListenAndServe(":"+port, nil))
 }
 
 var cache = make(map[string][]byte)
 
-func loadFilesToCache() {
-	files, err := os.ReadDir("./web")
+func loadDirToCache(path string) {
+	files, err := os.ReadDir(path)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	for _, file := range files {
-		if !file.IsDir() {
-			content, err := os.ReadFile(filepath.Join("./web", file.Name()))
+		path := filepath.Join(path, file.Name())
+		if file.IsDir() {
+			loadDirToCache(path)
+		} else {
+			content, err := os.ReadFile(path)
 			if err != nil {
 				log.Fatal(err)
 			}
-			name := file.Name()
-			cache[name] = content
+			path = strings.ReplaceAll(path, "\\", "/")
+			path = strings.TrimPrefix(path, "web/")
+			fmt.Println("Loaded " + path)
+			cache[path] = content
 		}
 	}
 }
