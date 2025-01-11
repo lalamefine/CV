@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CV Louis Triboulin</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <script src="main.js" defer></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous">
+</head>
+<!-- C'est juste un pure html + tailwind -->
+<body class="bg-gradient-to-br from-cyan-500 to-blue-500">
+  <div class="fixed w-full">
+    <div class="relative w-full flex justify-end pr-3">
+      <button onclick="window.print()" class="print:hidden bg-slate-50 text-blue-700 p-2 rounded-md m-2">
+        <i class="bi bi-printer"></i>
+      </button>
+    </div>
+  </div>
+  <div class="w-screen h-screen pt-4 px-12 overflow-y-scroll print:overflow-auto">
+    <div class="flex justify-center">
+      <!-- Left panel -->
+      <div class="max-w-80 print:max-w-auto w-1/3 mr-2">
+        <div class="bg-slate-50 rounded-md bg-opacity-60 p-4 my-2 print:p-2">
+          <div class="hidden 2xl:flex print:hidden items-center">
+            <img src="/img/louis.jpg" class="rounded-full mx-auto my-2" style="width: 100px; height: 100px;">
+            <h1 class="text-xl font-bold text-left">
+              Louis Triboulin
+            </h1>
+          </div>
+          <div class="block 2xl:hidden print:block items-center">
+            <h1 class="font-bold text-left text-xl print:text-base">
+              Louis Triboulin
+            </h1>
+            <img src="/img/louis.jpg" class="rounded-full mx-auto my-2" style="width: 100px; height: 100px;">
+          </div>
+          <p>
+            <span id="age"></span> ans (03/01/1997)<br/>
+            Français<br />
+            <a href="mailto:l.triboulin@gmail.com" class="underline">l.triboulin@gmail.com</a><br />
+            <a href="tel:+33671323678" class="underline">06 71 32 36 78</a><br />
+          </p>
+        </div>
+        <div class="bg-slate-50 rounded-md bg-opacity-60 p-4 my-2 print:p-2">
+          <p>
+            <span class="font-bold mb-3">CENTRES D’INTERETS</span><br />
+            Projets informatiques et électroniques,
+            Films, Séries, Musique (piano, batterie,
+            guitare), Jeux Indépendants, Escalade,
+            Vulgarisation scientifiques, Voyages
+          </p>
+        </div>
+        <div class="bg-slate-50 rounded-md bg-opacity-60 p-4 my-2 print:p-2">
+          <p>
+            <span class="font-bold mb-3">COMPETENCES LINGUISTIQUES</span><br />
+            Français (Natif)<br />
+            Anglais B2 (TOEIC : 905)<br />
+            Espagnol A2<br />
+            Chinois : Débutant
+          </p>
+        </div>
+        <div class="bg-slate-50 rounded-md bg-opacity-60 p-4 my-2 print:p-2">
+          <p>
+            <span class="font-bold mb-3">FORMATIONS</span><br />
+            <i>ESIGELEC – Ingénieur</i>, Spécialité: <br/> 
+            Ingénierie des Services du Numérique<br />
+            <!-- Junior Entreprise de l’ESIGELEC<br /> -->
+            <i>PERMIS B</i><br />
+            <i>BAC S</i><br />
+          </p>
+        </div>
+      </div>
+      <!-- Main panel -->
+      <div class="print:border-l-2 print:border-r-slate-600">
+        <div class="bg-slate-50 rounded-md bg-opacity-60 p-4 my-2 print:p-2">
+          <p>
+            <span class="font-bold mb-3">OBJECTIFS</span><br />
+            M’épanouir dans mon travail, élargir
+            mon champ de compétences, participer
+            à des projets techniques ou scientifiques,
+            intégrer une équipe.
+          </p>
+        </div>
+        <div class="bg-slate-50 rounded-md bg-opacity-60 p-4 my-2 print:p-2">
+          <p>
+            <span class="font-bold mb-3">COMPETENCES DEVELOPPEMENT</span><br/>
+            <!-- Todo Icons  -->
+            <div class="flex">
+              <div class="pt-2 pr-4 print:pr-1 w-1/3">
+                <div class="font-bold">Backend :</div>
+                <div class="flex flex-wrap">
+                  <div class="badge bg-blue-300 border-blue-500">PHP</div>
+                  <div class="badge bg-blue-300 border-blue-500">Node.js (JS & TS)</div>
+                  <div class="badge bg-green-300 border-green-500">SQL</div>
+                  <div class="badge bg-teal-300 border-teal-500">Symfony</div>
+                  <div class="badge bg-blue-300 border-blue-300">Java/JEE</div>
+                  <div class="badge bg-blue-300 border-blue-300">Kotlin</div>
+                  <div class="badge bg-blue-300 border-blue-300">VBA</div>
+                  <div class="badge bg-blue-300 border-blue-300">Flutter</div>
+                  <div class="badge bg-teal-300 border-teal-300">SvelteKit</div>
+                </div>
+              </div><div class="pt-2 pr-4 print:pr-1 w-1/3">
+                <div class="font-bold">Frontend :</div>
+                <div class="flex flex-wrap">
+                  <div class="badge bg-amber-300 border-amber-500">HTML</div>
+                  <div class="badge bg-amber-300 border-amber-500">CSS</div>
+                  <div class="badge bg-blue-300 border-blue-500">Javascript</div>
+                  <div class="badge bg-violet-300 border-violet-400">JQuery</div>
+                  <div class="badge bg-violet-200 border-violet-200">TailwindCSS</div>
+                  <div class="badge bg-teal-300 border-teal-300">Bootstrap</div>
+                  <div class="badge bg-teal-300 border-teal-300">Svelte</div>
+                </div>
+              </div><div class="pt-2 w-1/3">
+                <div class="font-bold">Devops :</div>
+                <div class="flex flex-wrap">
+                  <div class="badge bg-rose-300 border-rose-300">Docker</div>
+                  <div class="badge bg-rose-300 border-rose-300">Git</div>
+                  <div class="badge bg-rose-300 border-rose-300">Gitlab</div>
+                  <div class="badge bg-rose-300 border-rose-300">GitHub</div>
+                  <div class="badge bg-rose-300 border-rose-300">CI/CD</div>
+                  <div class="badge bg-rose-300 border-rose-300">Linux</div>
+                  <div class="badge bg-rose-300 border-rose-300">Apache</div>
+                  <div class="badge bg-rose-300 border-rose-300">Connaissances réseau & IoT</div>
+                </div>
+              </div>
+            </div>
+          </p>
+        </div>
+        <div class="bg-slate-50 rounded-md bg-opacity-60 p-4 my-2 print:p-2">
+          <p>
+            <span class="font-bold mb-3">EXPERIENCES PROFESSIONELLES</span><br/>
+            ENEDIS – Concepteur développeur référent<br/>
+            <p class="ml-2 mb-2 text-gray-800">
+              CDI de juin 2021 à aujourd’hui<br/>
+              Développement d’outils RH (PHP, HTML, SQL et JS)
+            </p>
+            ENEDIS – Concepteur développeur en intérim
+            <p class="ml-2 mb-2 text-gray-800">
+              Alternance à Rouen, de septembre 2020 à juin 2021<br/>
+              Développement d’outils RH (VBA, PHP, HTML, SQL et JS)
+            </p>
+            ENEDIS – Concepteur développeur
+            <p class="ml-2 mb-2 text-gray-800">
+              Alternance à Rouen, de septembre 2019 à septembre 2020<br/>
+              Développement d’outils RH (VBA, PHP et JS)
+            </p>
+            ARIAKE Kosen – Assistant chercheur
+            <p class="ml-2 mb-2 text-gray-800">
+              Stage au Japon (Kyūshū), de juin à août 2019<br/>
+              Aide à la recherche en sécurité et virtualisation :<br/>
+              Configuration et réalisation de tests de performance, documentation.
+            </p>
+            ENEDIS – Développeur & appui
+            <p class="ml-2 mb-2 text-gray-800">
+              7 Missions d’intérim à Rouen (total de 6 mois) entre 2015 et 2019.<br/>
+              Développement (VBA-Excel) d’outils d’aide à l’activité RH.
+            </p>
+          </p>
+        </div><div class="bg-slate-50 rounded-md bg-opacity-60 p-4 my-2 print:p-2">
+          <p>
+            <span class="font-bold mb-3">PROJETS REALISES</span><br />
+            <ul>
+              <li><i class="bi bi-arrow-right"></i> Une dizaine de projets web en entreprise</li>
+              <li><i class="bi bi-arrow-right"></i> Application mobile pour la Direction Générale de l’Armement</li>
+              <li><i class="bi bi-arrow-right"></i> Nombreux projets perso 
+                <ul class="ml-4">
+                  <li> <i class="bi bi-arrow-right-short"></i> Serveur personnel (Medias, VPN, Backups, CV web)</li>
+                  <li> <i class="bi bi-arrow-right-short"></i> Réalisation de Jeux vidéo indépendant</li>
+                  <li> <i class="bi bi-arrow-right-short"></i> Bricolages avec Arduino & Raspberry PI</li>
+                </ul>
+              </li>
+            </ul>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
