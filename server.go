@@ -12,7 +12,7 @@ import (
 var servedDir string
 
 func main() {
-	if len(os.Args) < 4 {
+	if len(os.Args) < 3 {
 		fmt.Println("Usage: ./serve <port> <mode>")
 		return
 	}
