@@ -13,13 +13,13 @@ var servedDir string
 
 func main() {
 	if len(os.Args) < 4 {
-		fmt.Println("Usage: server <port> <mode> <servedDir>")
+		fmt.Println("Usage: ./serve <port> <mode>")
 		return
 	}
 
 	port := os.Args[1]
 	mode := os.Args[2]
-	servedDir = os.Args[3] // "./docs"
+	servedDir = "./docs"
 
 	switch mode {
 	case "file":
