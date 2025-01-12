@@ -9,16 +9,24 @@ import (
 	"strings"
 )
 
+var servedDir string
+
 func main() {
-	mode := os.Args[1]
-	port := os.Args[2]
+	if len(os.Args) < 4 {
+		fmt.Println("Usage: server <port> <mode> <servedDir>")
+		return
+	}
+
+	port := os.Args[1]
+	mode := os.Args[2]
+	servedDir = os.Args[3] // "./docs"
 
 	switch mode {
 	case "file":
 		http.HandleFunc("/", serveByFileHandler)
 		fmt.Print("Direct file serving mode")
 	case "mem":
-		loadDirToCache("./web")
+		loadDirToCache(servedDir)
 		http.HandleFunc("/", serveByMemCachedFileHandler)
 		fmt.Print("Memory cached file serving mode")
 	default:
@@ -57,14 +65,14 @@ func loadDirToCache(path string) {
 
 func serveByFileHandler(w http.ResponseWriter, r *http.Request) {
 	name := strings.TrimPrefix(r.URL.Path, "/")
-	fmt.Println(strings.Join([]string{r.Method, name}, " /"))
+	fmt.Println("" + r.Method + " /" + name)
 	if name == "" {
 		name = "index"
 	}
 	if filepath.Ext(name) == "" {
 		name = name + ".html"
 	}
-	content, err := os.ReadFile(filepath.Join("./docs", name))
+	content, err := os.ReadFile(filepath.Join(servedDir, name))
 	if err != nil {
 		http.NotFound(w, r)
 		return
@@ -75,7 +83,7 @@ func serveByFileHandler(w http.ResponseWriter, r *http.Request) {
 
 func serveByMemCachedFileHandler(w http.ResponseWriter, r *http.Request) {
 	name := strings.TrimPrefix(r.URL.Path, "/")
-	fmt.Println(strings.Join([]string{r.Method, name}, " /"))
+	fmt.Println("" + r.Method + " /" + name)
 	if name == "" {
 		name = "index"
 	}
