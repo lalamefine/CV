@@ -26,8 +26,8 @@ body {
 
 @media print {
   body {
+    font-size: small;
     p {
-      font-size: small;
       page-break-inside: avoid;
     }
   }
